@@ -1,0 +1,73 @@
+~/dotfiles/
+├── 📁 flake.nix                    # Main flake
+├── 📁 flake.lock
+├── 📁 hosts/                       # Machine configurations
+│   ├── 📁 nixos/                   # Your main laptop
+│   │   ├── default.nix            # Main host config
+│   │   ├── hardware.nix           # Auto-generated
+│   │   ├── laptop.nix             # Laptop-specific
+│   │   └── secrets/               # Host-specific secrets
+│   └── 📁 common/                  # Shared across all hosts
+├── 📁 modules/                     # Reusable NixOS modules
+│   ├── 📁 core/                    # Essential system modules
+│   │   ├── boot.nix
+│   │   ├── networking.nix
+│   │   ├── security.nix
+│   │   ├── nix.nix
+│   │   └── packages.nix
+│   ├── 📁 hardware/                # Hardware-specific
+│   │   ├── nvidia.nix
+│   │   ├── audio.nix
+│   │   ├── bluetooth.nix
+│   │   ├── power.nix
+│   │   └── display.nix
+│   ├── 📁 desktop/                 # Desktop environment
+│   │   ├── hyprland/
+│   │   │   ├── default.nix        # Hyprland module
+│   │   │   ├── nvidia.nix         # NVIDIA-specific fixes
+│   │   │   └── 📁 config/         # Hyprland config files
+│   │   ├── sddm.nix
+│   │   └── xdg.nix
+│   ├── 📁 services/                # System services
+│   │   ├── docker.nix
+│   │   ├── ssh.nix
+│   │   └── virtualization.nix
+│   └── 📁 users/                   # User configurations
+│       ├── dx07844.nix            # Your user
+│       └── default.nix
+├── 📁 home/                        # Home Manager configurations
+│   ├── default.nix                # Shared home config
+│   ├── 📁 dx07844/                 # Your user's home
+│   │   ├── default.nix
+│   │   ├── 📁 programs/           # User programs config
+│   │   ├── 📁 services/           # User services
+│   │   └── 📁 config/             # Dotfiles
+│   └── 📁 common/                  # Shared home configs
+├── 📁 overlays/                    # Package overlays
+│   ├── default.nix
+│   └── 📁 custom-packages/        # Custom built packages
+├── 📁 secrets/                     # Encrypted secrets
+│   ├── default.nix
+│   └── 📁 keys/                    # Age/SSH keys
+├── 📁 profiles/                    # System profiles
+│   ├── desktop.nix
+│   ├── development.nix
+│   ├── gaming.nix
+│   └── minimal.nix
+├── 📁 pkgs/                        # Custom packages
+│   ├── default.nix
+│   └── 📁 custom/                  # Your own packages
+├── 📁 lib/                         # Custom Nix functions
+│   └── default.nix
+├── 📁 scripts/                     # Utility scripts
+│   ├── deploy.sh
+│   ├── update.sh
+│   └── backup.sh
+├── 📁 misc/                        # Miscellaneous configs
+│   ├── wallpapers/
+│   ├── fonts/
+│   └── themes/
+├── 📄 README.md
+├── 📄 .envrc                       # Direnv config
+├── 📄 .gitignore
+└── 📄 .editorconfig

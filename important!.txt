@@ -1,0 +1,35 @@
+this is my important notes
+
+
+
+ boot.loader = {
+    # UEFI settings
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";  # Fixed typo: "efisys" → "efiSys"
+    };
+    grub = {
+      enable = true;
+      device = "nodev";  # Use for UEFI systems
+      efiSupport = true;
+      useOSProber = true;  # Detect other OS
+      configurationLimit = 20;  # Keep last 20 generations
+      
+      # Optional: Theme for GRUB (makes it look nicer)
+      # theme = pkgs.nixos-grub2-theme;
+
+};
+};
+
+  swapDevices = [
+    {
+      device = "/dev/nvme0n1p6";
+      
+      # Optional: Swap optimization
+      # priority = 100;  # Higher priority = used more often
+      # discardPolicy = "once";  # TRIM support for SSD
+    }
+  ];
+
+   time.timeZone = "Africa/Tunis";
+  i18n.defaultLocale = "en_US.UTF-8";
